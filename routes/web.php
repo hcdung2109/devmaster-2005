@@ -18,7 +18,9 @@ Route::get('/', function () {
 // Admin
 Route::get('/admin', 'AdminController@index')->name('dashboard');
 
-// Route::resource('roles', 'RoleController');
+Route::resource('/admin/brand', 'BrandController'); // thương hiệu
+
+Route::resource('roles', 'RoleController');
 
 // Auth::routes();
 
