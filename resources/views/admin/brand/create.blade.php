@@ -17,7 +17,8 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form">
+                    <form role="form" action="{{ route('brand.store') }}" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên</label>
@@ -26,16 +27,14 @@
                             <div class="form-group">
                                 <label for="exampleInputFile">Ảnh</label>
                                 <input type="file" id="image" name="image">
-
-                                <p class="help-block">Example block-level help text here.</p>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Website</label>
                                 <input type="text" class="form-control" id="website" name="website" placeholder="Website">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tên</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Tên thương hiệu">
+                                <label for="exampleInputEmail1">Vị trí</label>
+                                <input type="number" class="form-control" id="position" name="position" min="0" value="0">
                             </div>
                             <div class="checkbox">
                                 <label>

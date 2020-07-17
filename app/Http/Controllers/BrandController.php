@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BrandController extends Controller
 {
@@ -13,7 +15,11 @@ class BrandController extends Controller
      */
     public function index()
     {
-        echo 'brand';
+        $data =  Brand::all();
+
+        return view('admin.brand.index',[
+            'data' => $data
+        ]);
     }
 
     /**
@@ -34,7 +40,44 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //validate dữ liệu
+//        $validatedData = $request->validate([
+//            'name' => 'required|max:255',
+//            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000'
+//        ]);
+
+        //Khởi tạo Model và gán giá trị từ form cho những thuộc tính của đối tượng (cột trong CSDL)
+        $brand = new Brand();
+        $brand->name = $request->input('name');
+        $brand->slug = Str::slug($brand->name, '-');
+
+//        if ($request->hasFile('image')) { // dòng này Kiểm tra xem có image có được chọn
+//            // get file
+//            $file = $request->file('image');
+//            // đặt tên cho file image
+//            $filename = time().'_'.$file->getClientOriginalName(); // $file->getClientOriginalName() == tên ban đầu của image
+//            // Định nghĩa đường dẫn sẽ upload lên
+//            $path_upload = 'uploads/category/'; // uploads/brand ; uploads/vendor
+//            // Thực hiện upload file
+//            $request->file('image')->move($path_upload,$filename);
+//
+//            $brand->image = $path_upload.$filename;
+//        }
+        // website
+        $brand->website = $request->input('website');
+
+        // Trạng thái
+        if ($request->has('is_active')){//kiem tra is_active co ton tai khong?
+            $brand->is_active = $request->input('is_active');
+        }
+        // Vị trí
+        $brand->position = $request->input('position');
+        // Lưu
+        $brand->save();
+
+        // Chuyển hướng trang về trang danh sách
+        return redirect()->route('brand.index');
     }
 
     /**
