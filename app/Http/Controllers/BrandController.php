@@ -52,18 +52,19 @@ class BrandController extends Controller
         $brand->name = $request->input('name');
         $brand->slug = Str::slug($brand->name, '-');
 
-//        if ($request->hasFile('image')) { // dòng này Kiểm tra xem có image có được chọn
-//            // get file
-//            $file = $request->file('image');
-//            // đặt tên cho file image
-//            $filename = time().'_'.$file->getClientOriginalName(); // $file->getClientOriginalName() == tên ban đầu của image
-//            // Định nghĩa đường dẫn sẽ upload lên
-//            $path_upload = 'uploads/category/'; // uploads/brand ; uploads/vendor
-//            // Thực hiện upload file
-//            $request->file('image')->move($path_upload,$filename);
-//
-//            $brand->image = $path_upload.$filename;
-//        }
+        if ($request->hasFile('image')) { // dòng này Kiểm tra xem có image có được chọn
+            // get file
+            $file = $request->file('image');
+            // đặt tên cho file image
+            $filename = time().'_'.$file->getClientOriginalName(); // $file->getClientOriginalName() == tên ban đầu của image
+            // Định nghĩa đường dẫn sẽ upload lên
+            $path_upload = 'uploads/brand/';
+            // Thực hiện upload file
+            $file->move($path_upload,$filename);
+
+            $brand->image = $path_upload.$filename;
+        }
+
         // website
         $brand->website = $request->input('website');
 
