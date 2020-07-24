@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('banner', 'BannerController');
     Route::resource('brand', 'BrandController'); // Thuong Hieu
     Route::resource('vendor', 'VendorController'); // Nhà cung cấp
+    Route::resource('category', 'CategoryController'); // Nhà cung cấp
 });
 
 // Auth::routes();

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1233a70-7b71-4476-ae4a-6a21e42e6810" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/banner/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/vendor/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webstore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webstore.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/main.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +116,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -154,6 +152,9 @@
       <workItem from="1595565908490" duration="202000" />
       <workItem from="1595566135939" duration="12000" />
       <workItem from="1595566385780" duration="34000" />
+      <workItem from="1595589565198" duration="1371000" />
+      <workItem from="1595590988501" duration="413000" />
+      <workItem from="1595591425362" duration="947000" />
     </task>
     <servers />
   </component>
@@ -165,14 +166,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595254280764" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1595248050183">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1595591505767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1595248050183" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1595246219172">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1595591505767" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1595591754326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1595246219171" />
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1595591754326" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1595566416640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
