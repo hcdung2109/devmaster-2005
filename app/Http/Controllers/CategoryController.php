@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -23,7 +25,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $categories = Category::all(); // lấy toàn bộ danh mục
+
+        return view('admin.category.create' , [ 'data' => $categories ]);
     }
 
     /**
@@ -34,7 +38,45 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate dữ liệu gửi từ form
+        $request->validate([
+            'name' => 'required|max:255',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000'
+        ], [
+            'name.required' => 'Tên không được để trống',
+            'image.image' => 'Ảnh không đúng định dạng'
+        ]);
+
+        //luu vào csdl
+        $category = new Category;
+        $category->name = $request->input('name');
+        $category->slug = Str::slug($request->input('name'));
+        $category->parent_id = $request->input('parent_id');
+
+        if ($request->hasFile('image')) {
+            // get file
+            $file = $request->file('image');
+            // get ten
+            $filename = time().'_'.$file->getClientOriginalName();
+            // duong dan upload
+            $path_upload = 'uploads/category/';
+            // upload file
+            $request->file('image')->move($path_upload,$filename);
+
+            $category->image = $path_upload.$filename;
+        }
+
+        $is_active = 0;
+        if ($request->has('is_active')) {//kiem tra is_active co ton tai khong?
+            $is_active = $request->input('is_active');
+        }
+
+        $category->is_active = $is_active;
+        $category->position = $request->input('position');
+        $category->save();
+
+        // chuyen dieu huong trang
+        return redirect()->route('category.index');
     }
 
     /**

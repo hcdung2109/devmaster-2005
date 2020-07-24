@@ -19,14 +19,28 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
+
+                    <form role="form" action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="box-body">
+
+                            @if($errors->any())
+                                <div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <h4><i class="icon fa fa-warning"></i> Lỗi!</h4>
+                                    @foreach($errors->all() as $error)
+                                        <p>{{ $error }}</p>
+                                    @endforeach
+                                </div>
+                            @endif
+
                             <div class="form-group">
                                 <label>Danh mục cha</label>
                                 <select class="form-control" name="parent_id">
                                     <option value="0">-- chọn --</option>
-
+                                    @foreach($data as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
@@ -44,7 +58,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Vị trí</label>
-                                <input type="text" class="form-control" id="position" name="position" placeholder="Nhập tên vị trí" value="0">
+                                <input type="number" class="form-control" id="position" name="position" value="0" min="0">
                             </div>
                         </div>
                         <!-- /.box-body -->
