@@ -51,7 +51,7 @@
                                     <td>{{ $item->is_active }}</td>
 
                                     <td class="text-center">
-                                        <a href="{{ route('admin.category.edit', ['id'=> $item->id]) }}" class="btn btn-flat btn-info">
+                                        <a href="{{ route('admin.category.edit', [ 'id'=> $item->id ]) }}" class="btn btn-flat btn-info">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <a href="javascript:void(0)" class="btn btn-flat btn-danger">
@@ -65,7 +65,7 @@
                     <!-- /.box-body -->
                     <div class="box-footer clearfix">
                         <ul class="pagination pagination-sm no-margin">
-
+                            {{ $data->links() }}
                         </ul>
                     </div>
                 </div>

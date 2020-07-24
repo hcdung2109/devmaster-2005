@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories =  Category::all(); // b1. Lấy toàn bộ dữ liệu DM
+        $categories =  Category::latest()->paginate(20);
 
         return view('admin.category.index',[
             'data' => $categories
@@ -102,7 +102,15 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        // get data from db
+        $all_cateogires = Category::all();
+
+        $category = Category::findorFail($id);
+
+        return view('admin.category.edit', [
+            'all_categories' => $all_cateogires,
+            'category' => $category
+        ]);
     }
 
     /**
