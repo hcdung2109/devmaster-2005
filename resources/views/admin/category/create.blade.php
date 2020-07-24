@@ -3,7 +3,7 @@
     <section class="content-header">
         <h1>
             Thêm - Danh mục
-            <small><a href="{{ route('category.index') }}">Danh sách</a></small>
+            <small><a href="{{ route('admin.category.index') }}">Danh sách</a></small>
         </h1>
     </section>
 
@@ -20,7 +20,7 @@
                     <!-- /.box-header -->
                     <!-- form start -->
 
-                    <form role="form" action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('admin.category.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="box-body">
 

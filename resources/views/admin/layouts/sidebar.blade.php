@@ -32,6 +32,13 @@
                     <span class="pull-right-container"></span>
                 </a>
             </li>
+
+            <li>
+                <a href="{{ route('admin.category.index') }}">
+                    <i class="fa fa-th"></i> <span>QL Danh mục</span>
+                </a>
+            </li>
+
             <li class="">
                 <a href="#">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>

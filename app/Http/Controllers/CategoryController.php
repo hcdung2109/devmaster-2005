@@ -15,7 +15,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories =  Category::all(); // b1. Lấy toàn bộ dữ liệu DM
+
+        return view('admin.category.index',[
+            'data' => $categories
+        ]);
     }
 
     /**
@@ -76,7 +80,7 @@ class CategoryController extends Controller
         $category->save();
 
         // chuyen dieu huong trang
-        return redirect()->route('category.index');
+        return redirect()->route('admin.category.index');
     }
 
     /**

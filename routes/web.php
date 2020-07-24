@@ -22,7 +22,7 @@ Route::resource('roles', 'RoleController');
 
 
 // Gom nhóm route trang admin . thêm tiền tố admin cho mỗi url
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.' ], function () {
     Route::resource('banner', 'BannerController');
     Route::resource('brand', 'BrandController'); // Thuong Hieu
     Route::resource('vendor', 'VendorController'); // Nhà cung cấp
