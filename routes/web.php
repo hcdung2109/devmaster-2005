@@ -18,9 +18,15 @@ Route::get('/', function () {
 // Admin
 Route::get('/admin', 'AdminController@index')->name('dashboard');
 
-Route::resource('/admin/brand', 'BrandController'); // thương hiệu
-
 Route::resource('roles', 'RoleController');
+
+
+// Gom nhóm route trang admin . thêm tiền tố admin cho mỗi url
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('banner', 'BannerController');
+    Route::resource('brand', 'BrandController'); // Thuong Hieu
+    Route::resource('vendor', 'VendorController'); // Nhà cung cấp
+});
 
 // Auth::routes();
 
