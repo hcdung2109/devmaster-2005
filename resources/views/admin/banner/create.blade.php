@@ -3,7 +3,7 @@
     <section class="content-header">
         <h1>
             Thêm - Banner
-            <small><a href="{{ route('banner.index') }}">Danh sách</a></small>
+            <small><a href="{{ route('admin.banner.index') }}">Danh sách</a></small>
         </h1>
     </section>
     <section class="content">
@@ -17,7 +17,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{ route('banner.store') }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('admin.banner.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="box-body">
                             <div class="form-group">

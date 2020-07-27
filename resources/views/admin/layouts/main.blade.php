@@ -298,5 +298,9 @@
 <script>
     CKEDITOR.replace('description');
 </script>
+
+<!-- Vị trí dùng để chèn code Javascript -->
+@yield('my_javascript')
+
 </body>
 </html>
