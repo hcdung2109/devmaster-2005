@@ -20,10 +20,21 @@
                     <!-- /.box-header -->
                     <!-- form start -->
 
-                    <form role="form" action="{{route('admin.category.update', ['id' => $category->id ])}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{  route('admin.category.update', ['id' => $category->id ])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="box-body">
+
+                            @if($errors->any())
+                                <div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <h4><i class="icon fa fa-warning"></i> Lỗi!</h4>
+                                    @foreach($errors->all() as $val)
+                                        <p>{{ $val }}</p>
+                                    @endforeach
+                                </div>
+                            @endif
+
                             <div class="form-group">
                                 <label>Danh mục cha</label>
                                 <select class="form-control" name="parent_id">
@@ -54,7 +65,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Vị trí</label>
-                                <input value="{{ $category->position }}" type="text" class="form-control" id="position"
+                                <input value="{{ $category->position }}" type="number" class="form-control" id="position"
                                        name="position" placeholder="Nhập tên vị trí">
                             </div>
                         </div>
