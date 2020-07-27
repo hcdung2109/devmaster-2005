@@ -54,7 +54,7 @@
                                         <a href="{{ route('admin.category.edit', [ 'id'=> $item->id ]) }}" class="btn btn-flat btn-info">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="javascript:void(0)" class="btn btn-flat btn-danger">
+                                        <a href="javascript:void(0)" class="btn btn-flat btn-danger" onclick="destroyModel('category', {{ $item->id }})" >
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>

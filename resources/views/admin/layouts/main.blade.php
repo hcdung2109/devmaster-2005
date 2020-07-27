@@ -39,6 +39,10 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="/backend/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <script type="text/javascript">
+        var base_url = '{{ url('/') }}';
+    </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -288,6 +292,9 @@
 <script src="/backend/dist/js/demo.js"></script>
 
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
+<script src="/backend/js/main.js"></script>
+
 <script>
     CKEDITOR.replace('description');
 </script>

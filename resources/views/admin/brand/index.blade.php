@@ -3,7 +3,7 @@
     <section class="content-header">
         <h1>
             Danh Sách Thương Hiệu
-            <small><a href="{{route('brand.create')}}">Thêm mới</a></small>
+            <small><a href="{{route('admin.brand.create')}}">Thêm mới</a></small>
         </h1>
     </section>
     <section class="content">
@@ -48,7 +48,7 @@
                                     <td>{{ $item->position }}</td>
                                     <td>{{ ($item->is_active == 1) ? 'Hiển thị' : 'Ẩn' }}</td>
                                     <td class="text-center">
-                                        <a href="{{route('brand.edit', ['id'=> $item->id])}}" class="btn btn-info">Sửa</a>
+                                        <a href="{{route('admin.brand.edit', ['id'=> $item->id])}}" class="btn btn-info">Sửa</a>
                                         <!-- Thêm sự kiện onlick cho nút xóa -->
                                         <a href="javascript:void(0)" class="btn btn-danger" onclick="destroyBrand({{ $item->id }})" >Xóa</a>
                                     </td>

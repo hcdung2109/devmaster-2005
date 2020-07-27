@@ -17,7 +17,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{ route('brand.store') }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('admin.brand.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="box-body">
                             <div class="form-group">

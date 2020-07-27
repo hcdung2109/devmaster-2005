@@ -173,6 +173,13 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Can kiem tra xem co sa pham thuoc danh muc nay hay khong
+        Category::destroy($id);
+
+        $dataResp = [
+            'status' => true
+        ];
+
+        return response()->json($dataResp, 200);
     }
 }
