@@ -11,9 +11,12 @@
 |
 */
 // Home
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ShopController@index')->name('shop');
+Route::get('/danh-muc', 'ShopController@category')->name('shop.category');
+Route::get('/chi-tiet-sp', 'ShopController@detailProduct')->name('shop.detail-product');
+Route::get('/ds-bai-viet', 'ShopController@articles')->name('shop.articles');
+Route::get('/chi-tiet-bai-viet', 'ShopController@detailArticle')->name('shop.detail-article');
+Route::get('/lien-he', 'ShopController@contact')->name('shop.contact');
 
 // Admin
 Route::get('/admin', 'AdminController@index')->name('dashboard');
