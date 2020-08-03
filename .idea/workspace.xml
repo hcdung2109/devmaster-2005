@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1233a70-7b71-4476-ae4a-6a21e42e6810" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/articles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/detail-article.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/detail-article.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/layouts/slides.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/layouts/slides.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/layout1/html/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/themes/layout1/html/debug.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +179,7 @@
       <workItem from="1596196822158" duration="7592000" />
       <workItem from="1596454932644" duration="945000" />
       <workItem from="1596456157242" duration="702000" />
-      <workItem from="1596456888904" duration="7022000" />
+      <workItem from="1596456888904" duration="7241000" />
     </task>
     <servers />
   </component>
