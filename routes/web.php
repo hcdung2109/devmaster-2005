@@ -12,17 +12,15 @@
 */
 // Home
 Route::get('/', 'ShopController@index')->name('shop');
-Route::get('/danh-muc', 'ShopController@category')->name('shop.category');
+Route::get('/{slug}', 'ShopController@category')->name('shop.category');
 Route::get('/chi-tiet-sp', 'ShopController@detailProduct')->name('shop.detail-product');
-Route::get('/ds-bai-viet', 'ShopController@articles')->name('shop.articles');
-Route::get('/chi-tiet-bai-viet', 'ShopController@detailArticle')->name('shop.detail-article');
+Route::get('/tin-tuc', 'ShopController@getArticles')->name('shop.get-articles');
+Route::get('/tin-tuc/{slug}', 'ShopController@getArticle')->name('shop.detail-article');
 Route::get('/lien-he', 'ShopController@contact')->name('shop.contact');
+Route::post('/lien-he', 'ShopController@createContact')->name('shop.create-contact');
 
 // Admin
 Route::get('/admin', 'AdminController@index')->name('dashboard');
-
-Route::resource('roles', 'RoleController');
-
 
 // Gom nhóm route trang admin . thêm tiền tố admin cho mỗi url
 Route::group(['prefix' => 'admin', 'as' => 'admin.' ], function () {

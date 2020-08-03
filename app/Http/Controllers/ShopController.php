@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
+use App\Contact;
 use Illuminate\Http\Request;
 
-class ShopController extends Controller
+class ShopController extends GeneralController
 {
     // Trang chủ - Home
     public function index()
     {
-
 
         $data = [
             'products' => '',
@@ -39,18 +40,45 @@ class ShopController extends Controller
         return view('shop.detail-product', $data);
     }
 
-    public function articles()
+    public function getArticles()
     {
-        return view('shop.articles');
+        $articles = Article::latest()->paginate(20);
+
+        return view('shop.articles', ['data' => $articles]);
     }
 
-    public function detailArticle()
+    public function getArticle($slug)
     {
-        return view('shop.detail-article');
+
+        $article = Article::where(['slug' => $slug, 'is_active' => 1])->first();
+
+        return view('shop.detail-article', ['data' => $article]);
     }
 
     public function contact()
     {
         return view('shop.contact');
+    }
+
+    public function createContact(Request $request)
+    {
+        //validate
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'content' => 'required'
+        ]);
+
+        //luu vào csdl
+        $contact = new Contact();
+        $contact->name = $request->input('name');
+        $contact->phone = $request->input('phone');
+        $contact->email = $request->input('email');
+        $contact->content = $request->input('content');
+        $contact->save();
+
+        // chuyển về trang chủ
+        return redirect('/');
     }
 }

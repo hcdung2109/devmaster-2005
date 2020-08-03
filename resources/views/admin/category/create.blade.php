@@ -48,7 +48,7 @@
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên danh mục">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputFile">File</label>
+                                <label for="exampleInputFile">Ảnh</label>
                                 <input type="file" id="image" name="image">
                             </div>
                             <div class="checkbox">
@@ -60,6 +60,15 @@
                                 <label for="exampleInputEmail1">Vị trí</label>
                                 <input type="number" class="form-control" id="position" name="position" value="0" min="0">
                             </div>
+
+                            <div class="form-group">
+                                <label>Loại</label>
+                                <select class="form-control" name="type">
+                                    <option value="1">Sản phẩm</option>
+                                    <option value="2">Tin tức</option>
+                                </select>
+                            </div>
+
                         </div>
                         <!-- /.box-body -->
 

@@ -77,6 +77,7 @@ class CategoryController extends Controller
 
         $category->is_active = $is_active;
         $category->position = $request->input('position');
+        $category->type = $request->input('type');
         $category->save();
 
         // chuyen dieu huong trang

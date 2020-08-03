@@ -1,4 +1,3 @@
-<!-- Home slideder-->
 <div id="home-slider">
     <div class="container">
         <div class="row">
